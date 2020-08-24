@@ -1,5 +1,11 @@
 # Dokku Buildpack: nginx
 
+CUSTOMIZED BUILD by @openhouse forked from dokku
+- add ngx_http_mp4_module to nginx build
+- configure nginx for mp4 pseudo streaming on .mp4 and .mov files
+
+---
+
 This is the official dokku buildpack for static websites, powered by nginx.
 
 ## Usage

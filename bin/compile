@@ -112,7 +112,8 @@ if [[ ! -f "${CACHE_DIR}/bin/nginx" ]]; then
     --without-mail_pop3_module \
     --without-mail_imap_module \
     --without-mail_smtp_module \
-    --with-http_realip_module
+    --with-http_realip_module \
+    --with-http_mp4_module
 
   sed -i "/CFLAGS/s/ \-O //g" objs/Makefile
 

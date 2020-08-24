@@ -22,6 +22,29 @@ http {
     index index.html;
     port_in_redirect off;
 
+    location ~ \.mp4$ {
+      {{ if ne $.NGINX_ROOT "" }}
+        root /app/www/{{ $.NGINX_ROOT }};
+      {{ else }}
+        root /app/www;
+      {{ end }}
+      mp4;
+      mp4_buffer_size 4M;
+      mp4_max_buffer_size 10M;
+    }
+
+    location ~ \.mov$ {
+      {{ if ne $.NGINX_ROOT "" }}
+        root /app/www/{{ $.NGINX_ROOT }};
+      {{ else }}
+        root /app/www;
+      {{ end }}
+      mp4;
+      mp4_buffer_size 4M;
+      mp4_max_buffer_size 10M;
+    }
+
+
     location / {
       try_files $uri $uri/ /index.html;
     }
