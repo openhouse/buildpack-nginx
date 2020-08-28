@@ -28,9 +28,10 @@ http {
       {{ else }}
         root /app/www;
       {{ end }}
+      aio threads;
       mp4;
-      mp4_buffer_size 4M;
-      mp4_max_buffer_size 10M;
+      mp4_buffer_size 10M;
+      mp4_max_buffer_size 100M;
     }
 
     location ~ \.mov$ {
@@ -39,9 +40,10 @@ http {
       {{ else }}
         root /app/www;
       {{ end }}
+      aio threads;
       mp4;
-      mp4_buffer_size 4M;
-      mp4_max_buffer_size 10M;
+      mp4_buffer_size 10M;
+      mp4_max_buffer_size 100M;
     }
 
 
